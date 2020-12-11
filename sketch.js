@@ -75,119 +75,82 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         coords:{lat: 53.07532, lng: 8.80301}, 
         iconImage: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
       },
-    // Marker Schnoor
-    {
-      coords:{lat: 53.07320, lng: 8.81006},
-      iconImage: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-    },
-      // Marker Schnoor Tipp 1
-      {
-        coords:{lat: 53.07366, lng: 8.80995},
-        iconImage: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-      },
-      // Marker Schnoor Tipp 2
-      {
-        coords:{lat: 53.07384, lng: 8.80776},
-        iconImage: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-      },
-      // Marker Schnoor Tipp 3
-      {
-        coords:{lat: 53.07112, lng: 8.8114},
-         iconImage: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-       },
-    // Marker Mühle
-    {
-      coords:{lat: 53.08022, lng: 8.80689},
-      iconImage: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-    },
-      // Marker Mühle Tipp 1
-       {
-        coords:{lat: 53.07907, lng: 8.81116},
-         iconImage: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-      },
-      // Marker Mühle Tipp 2
-      //{
-      //coords:{lat: 53.07642, lng: 8.80949},
-      //iconImage: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-      //},
-      // Marker Mühle Tipp 3
-       //{
-       //coords:{lat: 53.07851, lng: 8.80457},
-       //iconImage: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-       //}
-        
   ];
 
-  // loop through markers
-  for(var i = 0; i < markers.length; i++){
-    // Add marker
-    addMarker(markers[i]);
-  }
+  //Der erste grüne tipp
+  const markerg1 = new google.maps.Marker({
+    position: {lat: 53.07472, lng: 8.80499},
+    map,
+    title: "Grüner Tipp 1",
+  });
 
-  // Add Marker Function
-  function addMarker(props){
-    var marker = new google.maps.Marker({
-      position: props.coords,
-      map,
-      animation: google.maps.Animation.DROP,
-      title: "Marker Mühle Tipp 3",
-      //icon:props.iconImage 
-    });
-
-    // Check for custom icon
-    if(props.iconImage){
-     // Set icon image
-      marker.setIcon(props.iconImage);
-    }
-  }
-
-  //Text des Info Fensters
-  const Tipp3 =
+  const gtipp1 =
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Tipp 3</h1>' +
+    '<h1 id="firstHeading" class="firstHeading">Tipp 1</h1>' +
     '<div id="bodyContent">' +
-    "<p>Das ist der dritte Tipp für das rote Ziel</p>" + +
+    "<p>Das ist der erste Tipp für das grüne Ziel</p>" + +
     "</div>" +
     "</div>";
 
-    const Tipp2 =
+  const windowgtipp1 = new google.maps.InfoWindow({
+    content: gtipp1,
+  });
+
+  markerg1.addListener("click", () => {
+    windowgtipp1.open(map, markerg1);
+  });
+  
+  //Der zweite grüe tipp
+  const markerg2 = new google.maps.Marker({
+    position: {lat: 53.0735, lng: 8.81277},
+    map,
+    title: "Grüner Tipp 2",
+  });
+
+  const gtipp2 =
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
     '<h1 id="firstHeading" class="firstHeading">Tipp 2</h1>' +
     '<div id="bodyContent">' +
-    "<p>Das ist der zweite Tipp für das rote Ziel</p>" + +
+    "<p>Das ist der zweite Tipp für das grüne Ziel</p>" + +
     "</div>" +
     "</div>";
 
-  const infowindow = new google.maps.InfoWindow({
-    content: Tipp3,
+  const windowgtipp2 = new google.maps.InfoWindow({
+    content: gtipp2,
   });
 
-  const infowindow2 = new google.maps.InfoWindow({
-    content: Tipp2,
+  markerg2.addListener("click", () => {
+    windowgtipp2.open(map, markerg2);
+  });
+
+  //Der dritte grüe tipp
+  const markerg3 = new google.maps.Marker({
+    position: {lat: 53.07532, lng: 8.80301},
+    map,
+    title: "Grüner Tipp 2",
+  });
+
+  const gtipp3 =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">Tipp 3</h1>' +
+    '<div id="bodyContent">' +
+    "<p>Das ist der dritte Tipp für das grüne Ziel</p>" + +
+    "</div>" +
+    "</div>";
+
+  const windowgtipp3 = new google.maps.InfoWindow({
+    content: gtipp3,
+  });
+
+  markerg3.addListener("click", () => {
+    windowgtipp3.open(map, markerg3);
   });
 
   
-  const marker = new google.maps.Marker({
-    position: {lat: 53.07851, lng: 8.80457},
-    map,
-    title: "Marker Mühle Tipp 3",
-  });
- 
-  const marker2 = new google.maps.Marker({
-    position: {lat: 53.07642, lng: 8.80949},
-    map,
-    title: "Marker Mühle Tipp 2",
-  });
-  
-  marker.addListener("click", () => {
-    infowindow.open(map, marker);
-  });
-
-  marker2.addListener("click", () => {
-    infowindow2.open(map, marker2);
-  });
 }
