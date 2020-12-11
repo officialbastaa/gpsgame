@@ -21,7 +21,8 @@ function initMap() {
   var map = new
   google.maps.Map(document.getElementById("map"), options);
 
-  //info fenster
+  /*
+  //info fenster geolocation
   var infoWindow = new google.maps.InfoWindow({map: map});
 
   //get geolocation
@@ -50,7 +51,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
 
-  
+  */
 
   // Array of markers
   var markers = [
@@ -105,10 +106,10 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
          iconImage: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
       },
       // Marker Mühle Tipp 2
-      {
-      coords:{lat: 53.07642, lng: 8.80949},
-      iconImage: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-      },
+      //{
+      //coords:{lat: 53.07642, lng: 8.80949},
+      //iconImage: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+      //},
       // Marker Mühle Tipp 3
        //{
        //coords:{lat: 53.07851, lng: 8.80457},
@@ -127,8 +128,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   function addMarker(props){
     var marker = new google.maps.Marker({
       position: props.coords,
-      map:map,
+      map,
       animation: google.maps.Animation.DROP,
+      title: "Marker Mühle Tipp 3",
       //icon:props.iconImage 
     });
 
@@ -140,7 +142,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   }
 
   //Text des Info Fensters
-  const contentString =
+  const Tipp3 =
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
@@ -150,16 +152,42 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     "</div>" +
     "</div>";
 
+    const Tipp2 =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">Tipp 2</h1>' +
+    '<div id="bodyContent">' +
+    "<p>Das ist der zweite Tipp für das rote Ziel</p>" + +
+    "</div>" +
+    "</div>";
+
   const infowindow = new google.maps.InfoWindow({
-    content: contentString,
+    content: Tipp3,
   });
 
+  const infowindow2 = new google.maps.InfoWindow({
+    content: Tipp2,
+  });
+
+  
   const marker = new google.maps.Marker({
     position: {lat: 53.07851, lng: 8.80457},
     map,
     title: "Marker Mühle Tipp 3",
   });
+ 
+  const marker2 = new google.maps.Marker({
+    position: {lat: 53.07642, lng: 8.80949},
+    map,
+    title: "Marker Mühle Tipp 2",
+  });
+  
   marker.addListener("click", () => {
     infowindow.open(map, marker);
+  });
+
+  marker2.addListener("click", () => {
+    infowindow2.open(map, marker2);
   });
 }
