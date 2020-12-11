@@ -133,7 +133,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     "</div>" +
     '<h1 id="firstHeading" class="firstHeading">Tipp 3</h1>' +
     '<div id="bodyContent">' +
-    "<p>Folge dem Ostwind und du wirst dein Ziel finden</p>" + +
+    "<p>Gehe dem Ostwind entgegen und du wirst dein Ziel finden</p>" + +
     "</div>" +
     "</div>";
 
