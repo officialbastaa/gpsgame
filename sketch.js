@@ -52,6 +52,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: Your browser doesn\'t support geolocation.');
 
   */
+ 
 
   // Array of markers
   var markers = [
@@ -77,6 +78,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       },
   ];
 
+  const transparent = "transparent.png"
+
   const greenpin = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
 
   //Der erste grüne tipp
@@ -84,7 +87,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     position: {lat: 53.07472, lng: 8.80499},
     map,
     title: "Grüner Tipp 1",
-    icon: (greenpin),
+    icon: greenpin,
   });
 
   const gtipp1 =
@@ -105,7 +108,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     windowgtipp1.open(map, markerg1);
   });
   
-  //Der zweite grüe tipp
+  //Der zweite grüne tipp
   const markerg2 = new google.maps.Marker({
     position: {lat: 53.0735, lng: 8.81277},
     map,
@@ -155,6 +158,32 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
   markerg3.addListener("click", () => {
     windowgtipp3.open(map, markerg3);
+  });
+
+  //Das grüne Ziel
+  const markergziel = new google.maps.Marker({
+    position: {lat: 53.075902515451865, lng: 8.807305771833713},
+    map,
+    title: "Grüne Ziel",
+    icon: transparent,
+  });
+
+  const gziel =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">Grünes Ziel</h1>' +
+    '<div id="bodyContent">' +
+    "<p>Das ist der dritte Tipp für das grüne Ziel</p>" + +
+    "</div>" +
+    "</div>";
+
+  const windowgziel = new google.maps.InfoWindow({
+    content: gziel,
+  });
+
+  markergziel.addListener("click", () => {
+    windowgziel.open(map, markergziel);
   });
 
   
