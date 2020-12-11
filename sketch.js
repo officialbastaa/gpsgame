@@ -52,34 +52,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: Your browser doesn\'t support geolocation.');
 
   */
- 
 
-  // Array of markers
-  var markers = [
-    // Marker Roland
-    {
-      coords:{lat: 53.075902515451865, lng: 8.807305771833713}, 
-      iconImage: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-    },
-      // Marker Roland Tipp 1
-      {
-        coords:{lat: 53.07472, lng: 8.80499}, 
-        iconImage: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-      },
-      // Marker Roland Tipp 2
-      {
-        coords:{lat: 53.0735, lng: 8.81277}, 
-        iconImage: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-      },
-      // Marker Roland Tipp 3
-      {
-        coords:{lat: 53.07532, lng: 8.80301}, 
-        iconImage: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-      },
-  ];
-
+  //Das unsichtbare bild für Ziele
   const transparent = "transparent.png"
-
+  
+  //Das grüne Bild für Hinweise
   const greenpin = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
 
   //Der erste grüne tipp
@@ -96,7 +73,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     "</div>" +
     '<h1 id="firstHeading" class="firstHeading">Tipp 1</h1>' +
     '<div id="bodyContent">' +
-    "<p>Das ist der erste Tipp für das grüne Ziel</p>" + +
+    "<p>Errichtet in 1404 steht es seitdem</p>" + +
     "</div>" +
     "</div>";
 
@@ -122,7 +99,15 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     "</div>" +
     '<h1 id="firstHeading" class="firstHeading">Tipp 2</h1>' +
     '<div id="bodyContent">' +
-    "<p>Das ist der zweite Tipp für das grüne Ziel</p>" + +
+    "<p><b>Auszug aus einem Gedicht von Friedrich Rückert:</b></p>" +
+    "<p>______, der Ries', am</p>" +
+    "<p>_______ zu Bremen</p>" +
+    "<p>Steht er im Standbild</p>" +
+    "<p>Standhaft und wacht.</p>" +
+    "<p>______, der Ries', am</p>" +
+    "<p>_______ zu Bremen,</p>" +
+    "<p>Kämpfer einst Kaisers</p>" +
+    "<p>Karls in der Schlacht.</p>" +
     "</div>" +
     "</div>";
 
@@ -148,7 +133,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     "</div>" +
     '<h1 id="firstHeading" class="firstHeading">Tipp 3</h1>' +
     '<div id="bodyContent">' +
-    "<p>Das ist der dritte Tipp für das grüne Ziel</p>" + +
+    "<p>Folge dem Ostwind und du wirst dein Ziel finden</p>" + +
     "</div>" +
     "</div>";
 
@@ -172,9 +157,10 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Grünes Ziel</h1>' +
+    '<h1 id="firstHeading" class="firstHeading">Grünes Ziel: Der Roland</h1>' +
     '<div id="bodyContent">' +
-    "<p>Das ist der dritte Tipp für das grüne Ziel</p>" + +
+    "<p>Woohoo! (/ *o*)/</p>" + 
+    "<p>Du hast dein Ziel gefunden! </p>" +
     "</div>" +
     "</div>";
 
