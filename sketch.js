@@ -77,11 +77,14 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       },
   ];
 
+  const greenpin = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+
   //Der erste grüne tipp
   const markerg1 = new google.maps.Marker({
     position: {lat: 53.07472, lng: 8.80499},
     map,
     title: "Grüner Tipp 1",
+    icon: (greenpin),
   });
 
   const gtipp1 =
@@ -107,6 +110,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     position: {lat: 53.0735, lng: 8.81277},
     map,
     title: "Grüner Tipp 2",
+    icon: greenpin,
   });
 
   const gtipp2 =
@@ -131,7 +135,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   const markerg3 = new google.maps.Marker({
     position: {lat: 53.07532, lng: 8.80301},
     map,
-    title: "Grüner Tipp 2",
+    title: "Grüner Tipp 3",
+    icon: greenpin,
   });
 
   const gtipp3 =
