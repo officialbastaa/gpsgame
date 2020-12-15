@@ -14,7 +14,9 @@ function initMap() {
   var options = {
     zoom: 16,
     center: { lat: 53.075801, lng: 8.807000},
-    mapId: 'e97ae85210183977'
+
+    mapTypeId: 'e97ae85210183977'
+
   }
 
   // New map
@@ -133,7 +135,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     "</div>" +
     '<h1 id="firstHeading" class="firstHeading">Tipp 3</h1>' +
     '<div id="bodyContent">' +
-    "<p>Folge dem Ostwind und du wirst dein Ziel finden</p>" + +
+    "<p>Gehe dem Ostwind entgegen und du wirst dein Ziel finden</p>" + +
     "</div>" +
     "</div>";
 
