@@ -14,8 +14,7 @@ function initMap() {
   var options = {
     zoom: 16,
     center: { lat: 53.075801, lng: 8.807000},
-
-    mapTypeId: 'e97ae85210183977'
+    mapId: 'e97ae85210183977'
 
   }
 
