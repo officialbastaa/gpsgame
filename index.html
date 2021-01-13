@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sketch</title>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-    <script src="libraries/p5.geolocation.js"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFEsxrd1rjhHobwl72Jkh1pF11JsF7nCo&map_ids=e97ae85210183977&callback=initMap"></script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
   
-
+    <title>gpsgame</title>
+    <style>
+      body { padding: 0; margin: 0; }
+      #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="sketch.js"></script>
   </head>
 
   <body>
-    <script src="sketch.js"></script>
-    
     <div id="map"></div>
+    <script src="sketch.js">
+      
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZXhwZXJpbWVudGFsbW9iaWxlcGxheSIsImEiOiJja2p2Y2xydTIwN2s0MndvYWpmazB4M2IzIn0.q3CYZLs_taS8F7-pA1eF7g';
+        var map = new mapboxgl.Map({
+          container: 'map', // container id
+          style: 'mapbox://styles/mapbox/dark-v9', // style URL
+          zoom: 0
+        });
+        
+    </script>
+    
   </body>
 </html>
