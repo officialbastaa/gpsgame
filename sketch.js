@@ -24,7 +24,7 @@ let long = -1;
 
 
 function preLoad() {
-  myFont = loadFont('Ligconsolata-Regular.otf'); // Eigene Font fehlt!
+  myFont = loadFont('SF-Pro.ttf'); 
 }
 
 function setup() {
@@ -254,4 +254,3 @@ function gen_uid() {
     windowgziel.open(map, markergziel);
   }); 
   */
-
